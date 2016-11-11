@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>  
+  <body>
+    <form action="add" method="post">
+     姓名:<input name="name"/><br>
+     薪水:<input name="salary"/><br>
+     年龄:<input name = "age" /><br>
+     <input type="submit" value="增加"/>
+    </form>
+    <fieldset>
+    	<legend>查询员工</legend>
+    	姓名:<input name="name" 
+    			id="userName" 
+				onblur="validateUserName(this,'userName_msg')" /><br/>
+    	<input type="submit" value="查询" "/>
+    	<input type="reset" value="重填" />
+    </fieldset>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+form表单提交说明：
+
+1.请求方式
+种类:get,post,head....
+区别:
+ get:在地址栏中输入地址,点击超链接,表单的默认提交方式,提交数据时会保存在请求资源路径中.保存的数据量有限,不安全.
+ post:将表单的method设置为post.提交的数据保存在请求数据包中的实体内容部分,数据量没有限制,相对于get方式来说安全一些,
+ 但是get和post默认数据都是没有加密的
+ 
+2.如何获取请求中的参数?
+request.getParameter(name);
+其中:name指的是参数名.用于获取 一个名称对应一个值
+request.getParameterValues(name);
+用于获取一个名称对应多个值(如:获取复选框的value)
+
+3.get方式提交数据的格式?
+http://localhost:8080/appName/hi?id=1&name=kitty
+<a href="abc.html?id=1">链接</a>
+
+4.servlet如何获取提交的中文信息?
+post方式提交:
+step1:html页面中添加meta.
+<meta http-equiv="content-type"
+            content="text/html;charset=utf-8">
+两层含义:浏览器以utf-8格式解析该页面;提交数据时以该格式进行编码
+step2:在服务器端,在读取数据之前,设置同样的编码格式
+request.setCharacterEncoding("utf-8");
+get方式提交中文:
+step1:同post方式的第一步
+step2:
+String s = request.getParameter();
+String newStr = new String(s.getBytes("iso-8859-1"),"utf-8");
+
+5.如何输出中文?
+使用response.setContentType("text/html;charset=utf-8");
+设置了响应数据包中的content-type消息头,但浏览器收到消息头以后,就按照指定的格式解析页面内容
+
+6.使用jdbc技术实现数据的保存
+step1:复制jdbc的jar包到lib下
+step2:编写jdbc代码实现功能.注意异常处理和释放资源

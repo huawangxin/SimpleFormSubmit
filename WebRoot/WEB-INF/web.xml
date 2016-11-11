@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <!-- 新增员工 -->
+  <servlet>
+  	<servlet-name>addEmpServlet</servlet-name>
+  	<servlet-class>web.AddEmpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>addEmpServlet</servlet-name>
+  	<url-pattern>/add</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 查询员工列表 -->
+  <servlet>
+  	<servlet-name>listEmpServlet</servlet-name>
+  	<servlet-class>web.ListEmpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>listEmpServlet</servlet-name>
+  	<url-pattern>/list</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 配置删除员工的servlet -->
+  <servlet>
+  	<servlet-name>deleteEmpServlet</servlet-name>
+  	<servlet-class>web.DeleteEmpServlet</servlet-class>
+  </servlet>
+   <servlet-mapping>
+  	<servlet-name>deleteEmpServlet</servlet-name>
+  	<url-pattern>/del</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>loadEmpServlet</servlet-name>
+  	<servlet-class>web.LoadEmpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>loadEmpServlet</servlet-name>
+  	<url-pattern>/load</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>selectEmpServlet</servlet-name>
+  	<servlet-class>web.SelectEmpMohu</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>selectEmpServlet</servlet-name>
+  	<url-pattern>/select</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>changeEmpServlet</servlet-name>
+  	<servlet-class>web.UpdateEmpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>changeEmpServlet</servlet-name>
+  	<url-pattern>/update</url-pattern>
+  </servlet-mapping>
+</web-app>
